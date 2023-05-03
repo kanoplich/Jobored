@@ -1,11 +1,15 @@
-import { Link } from 'react-router-dom';
+import Logo from '../Logo/Logo';
+import Navigate from '../Navigation/Navigate';
+import './header.css';
 
 const Header = () => {
   return (
-    <>
-      <Link to="/">Поиск Вакансий</Link>
-      <Link to="favorites">Избранное</Link>
-    </>
+    <header className="header__container container">
+      <div className="header__wrapper">
+        <Logo />
+        <Navigate />
+      </div>
+    </header>
   );
 };
 

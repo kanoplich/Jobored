@@ -1,8 +1,8 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from '../Layout/Layout';
-import Main from '../../pages/Main';
-import Favorites from '../../pages/Favorites';
-import NotFound from '../../pages/NotFound';
+import Main from '../../pages/Main/Main';
+import Favorites from '../../pages/Favorites/Favorites';
+import NotFound from '../../pages/NotFound/NotFound';
 
 function App() {
   return (

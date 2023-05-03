@@ -1,0 +1,50 @@
+/* -- Reset styles -- */
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: #232134;
+}
+a:link {
+  color: #232134;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+html {
+  scroll-behavior: smooth;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1116px;
+  width: calc(100% - 20px);
+}
+body {
+  font-weight: 400;
+  font-family:'Inter', sans-serif;
+  font-style: normal;
+  font-size: 16px;
+}
