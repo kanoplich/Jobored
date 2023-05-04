@@ -48,3 +48,12 @@ body {
   font-style: normal;
   font-size: 16px;
 }
+
+/* ---------------- */
+
+.main__wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 0 28px;
+  padding-top: 40px;
+}

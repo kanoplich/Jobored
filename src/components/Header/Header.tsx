@@ -1,5 +1,5 @@
 import Logo from '../Logo/Logo';
-import Navigate from '../Navigation/Navigate';
+import Navigate from '../Navigate/Navigate';
 import './header.css';
 
 const Header = () => {

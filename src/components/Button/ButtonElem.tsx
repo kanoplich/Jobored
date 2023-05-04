@@ -1,6 +1,6 @@
 import { Button } from '@mantine/core';
 
-const FilterButton = () => {
+const ButtonElem = () => {
   return (
     <Button
       style={{ fontSize: '14px', fontWeight: '500', lineHeight: '21' }}
@@ -14,4 +14,4 @@ const FilterButton = () => {
   );
 };
 
-export default FilterButton;
+export default ButtonElem;

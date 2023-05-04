@@ -1,4 +1,6 @@
-import FilterButton from '../FilterButton/FilterButton';
+import { Text, Group } from '@mantine/core';
+import { IconX } from '@tabler/icons-react';
+import ButtonElem from '../Button/ButtonElem';
 import Industry from '../Industry/Industry';
 import Salary from '../Salary/Salary';
 import './filter.css';
@@ -8,10 +10,10 @@ const Filter = () => {
     <section className="filter__container">
       <div className="filter__title_wrapper">
         <div className="filter__title">Фильтры</div>
-        <div className="filter__reset_wrapper">
-          <div className="filter__reset">Сбросить все</div>
-          <div className="filter__reset_icon"></div>
-        </div>
+        <Group>
+          <Text>Сбросить все</Text>
+          <IconX />
+        </Group>
       </div>
       <div className="filter__industry_wrapper">
         <div className="filter__industry_title">Отрасль</div>
@@ -23,7 +25,7 @@ const Filter = () => {
         <Salary />
       </div>
       <div className="filter__button">
-        <FilterButton />
+        <ButtonElem />
       </div>
     </section>
   );

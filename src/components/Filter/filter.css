@@ -2,7 +2,7 @@
   padding: 18px;
   border: 1px solid #EAEBED;
   border-radius: 12px;
-  width: 315px;
+  min-width: 315px;
   background-color: #FFFFFF;
 }
 .filter__title_wrapper {
@@ -14,27 +14,6 @@
   font-weight: 700;
   font-size: 20px;
   line-height: 20px;
-}
-.filter__reset_wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0 4px;
-  cursor: pointer;
-}
-.filter__reset {
-  display: flex;
-  align-items: center;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  color: #ACADB9;
-}
-.filter__reset_icon {
-  background-image: url("../../assets/close.svg");
-  background-repeat: no-repeat;
-  width: 16px;
-  height: 16px;
 }
 .filter__industry_wrapper {
   margin-top: 32px;
