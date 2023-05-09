@@ -4,3 +4,7 @@
   align-items: center;
   width: 275px;
 }
+.nav_active {
+  color: #5e96fc;
+  font-weight: 500;
+}

@@ -11,12 +11,6 @@
 a {
   text-decoration: none;
 }
-a:visited {
-  color: #232134;
-}
-a:link {
-  color: #232134;
-}
 ul,
 ol,
 li {
@@ -44,9 +38,10 @@ html {
 }
 body {
   font-weight: 400;
-  font-family:'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-size: 16px;
+  color: #232134;
 }
 
 /* ---------------- */
