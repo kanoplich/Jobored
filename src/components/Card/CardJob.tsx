@@ -1,8 +1,12 @@
 import { Card, Text, Group, Image } from '@mantine/core';
 import { IconPointFilled, IconMapPin } from '@tabler/icons-react';
 import Star from '../../assets/Star.svg';
+import { Link } from 'react-router-dom';
+import { useAppDispatch } from '../../hooks/redux';
+import { vacancySlice } from '../../store/reducers/vacancySlice';
 
 type CardJobProps = {
+  id: number;
   profession: string;
   type_of_work: string;
   town: string;
@@ -11,8 +15,21 @@ type CardJobProps = {
   currency: string;
 };
 
+const favorites: number[] = [];
+
 const CardJob = (props: CardJobProps) => {
-  const { profession, town, type_of_work, payment_from, payment_to, currency } = props;
+  const dispatch = useAppDispatch();
+  const { CardId } = vacancySlice.actions;
+  const { profession, town, type_of_work, payment_from, payment_to, currency, id } = props;
+
+  const handleClickLink = () => {
+    dispatch(CardId(id));
+  };
+
+  const handleClickFavorites = () => {
+    favorites.push(id);
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+  };
 
   let salary = '';
 
@@ -30,26 +47,43 @@ const CardJob = (props: CardJobProps) => {
 
   return (
     <Card padding="24px" radius="md" withBorder>
-      <Group position="apart" mb="xs">
-        <Text weight={600} fz={20} color="#5E96FC" lh="24px">
-          {profession}
-        </Text>
-        <Image src={Star} width="22px" height="22px" alt="star"></Image>
+      <Group position="apart" mb={12}>
+        <Link to="/vacancy">
+          <Text
+            style={{ width: 600, cursor: 'pointer' }}
+            weight={600}
+            ff="Inter, san-serif"
+            fz={20}
+            color="#5E96FC"
+            lh="24px"
+            onClick={handleClickLink}
+          >
+            {profession}
+          </Text>
+        </Link>
+        <Image
+          src={Star}
+          width="22px"
+          height="22px"
+          alt="star"
+          style={{ cursor: 'pointer' }}
+          onClick={handleClickFavorites}
+        ></Image>
       </Group>
 
-      <Group>
-        <Text size="sm" color="dimmed">
+      <Group mb={12}>
+        <Text ff="Inter, san-serif" size="sm" fz={16} color="#232134" weight={600}>
           {salary}
         </Text>
-        <IconPointFilled />
-        <Text size="sm" color="dimmed">
+        <IconPointFilled style={{ color: '#7B7C88' }} height={21} width={9} />
+        <Text ff="Inter, san-serif" size="sm" fz={16} color="#232134">
           {type_of_work}
         </Text>
       </Group>
 
       <Group>
-        <IconMapPin />
-        <Text size="sm" color="dimmed">
+        <IconMapPin style={{ color: '#ACADB9' }} size={20} />
+        <Text size="sm" ff="Inter, san-serif" fz={16} color="#232134" weight={400} lh="19px">
           {town}
         </Text>
       </Group>

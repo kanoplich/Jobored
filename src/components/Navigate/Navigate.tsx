@@ -7,10 +7,10 @@ const Navigate = () => {
 
   return (
     <nav className="header__nav">
-      <Link to="/" className={location.pathname === '/' ? 'nav_active' : ''}>
+      <Link to="/" className={location.pathname === '/' ? 'nav_active' : 'nav'}>
         Поиск Вакансий
       </Link>
-      <Link to="/favorites" className={location.pathname === '/favorites' ? 'nav_active' : ''}>
+      <Link to="/favorites" className={location.pathname === '/favorites' ? 'nav_active' : 'nav'}>
         Избранное
       </Link>
     </nav>

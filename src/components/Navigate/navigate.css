@@ -4,7 +4,17 @@
   align-items: center;
   width: 275px;
 }
+.nav {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #232134;
+}
 .nav_active {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
   color: #5e96fc;
   font-weight: 500;
 }

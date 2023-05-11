@@ -10,9 +10,9 @@ const Filter = () => {
     <section className="filter__container">
       <div className="filter__title_wrapper">
         <div className="filter__title">Фильтры</div>
-        <Group>
-          <Text>Сбросить все</Text>
-          <IconX />
+        <Group className="filter__group">
+          <Text className='filter__group_text' >Сбросить все</Text>
+          <IconX size={16} />
         </Group>
       </div>
       <div className="filter__industry_wrapper">

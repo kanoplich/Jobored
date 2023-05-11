@@ -6,6 +6,7 @@ const Search = () => {
     <TextInput
       placeholder="Введите название вакансии"
       style={{ fontSize: 14, lineHeight: 21 }}
+      ff="Inter, san-serif"
       radius="md"
       size="lg"
       icon={<IconSearch size="1.2rem" />}

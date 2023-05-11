@@ -4,7 +4,8 @@ const Industry = () => {
   return (
     <Select
       placeholder="Выберете отрасль"
-      data={['React', 'Angular', 'Svelte', 'Vue']}
+      data={['React', 'Angular', 'Svelte', 'Vue', 'React', 'Angular']}
+      dropdownPosition="bottom"
       radius="md"
       size="md"
     />

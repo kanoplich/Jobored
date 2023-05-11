@@ -1,0 +1,22 @@
+.empty__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 32px 0;
+  height: calc(100vh - 84px);
+}
+.empty__image {
+  background-image: url('../../assets/man.svg');
+  background-repeat: no-repeat;
+  width: 240px;
+  height: 230.27px;
+}
+.empty__text {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #343a40;
+}

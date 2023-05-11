@@ -1,4 +1,4 @@
-interface IVacancy {
+export interface IVacancy {
   id: number;
   profession: string;
   vacancyRichText: string;

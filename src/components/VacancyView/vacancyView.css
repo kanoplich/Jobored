@@ -1,0 +1,10 @@
+.vacancy-view__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 40px;
+  width: 773px;
+  margin: 0 auto;
+  gap: 20px 0;
+}

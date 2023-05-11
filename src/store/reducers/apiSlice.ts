@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { IVacancies } from '../../types';
+import { IVacancies, IVacancy } from '../../types';
 
 const API_KEY = 'GEU4nvd3rej*jeh.eqp';
 const API_APP_ID =
@@ -19,7 +19,10 @@ export const apiSlice = createApi({
     getVacancies: builder.query<IVacancies, void>({
       query: () => `/vacancies/`,
     }),
+    getVacancyID: builder.query<IVacancy, number>({
+      query: (id) => `/vacancies/${id}/`,
+    }),
   }),
 });
 
-export const { useGetVacanciesQuery } = apiSlice;
+export const { useGetVacanciesQuery, useGetVacancyIDQuery } = apiSlice;

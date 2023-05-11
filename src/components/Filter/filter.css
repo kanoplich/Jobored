@@ -1,9 +1,10 @@
 .filter__container {
-  padding: 18px;
-  border: 1px solid #EAEBED;
+  padding: 20px;
+  border: 1px solid #eaebed;
   border-radius: 12px;
+  height: 360px;
   min-width: 315px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 .filter__title_wrapper {
   display: flex;
@@ -14,17 +15,39 @@
   font-weight: 700;
   font-size: 20px;
   line-height: 20px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
 }
 .filter__industry_wrapper {
   margin-top: 32px;
 }
+.filter__group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #acadb9;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  gap: 0 4px;
+}
+.filter__group_text {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
 .filter__industry_title {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
   margin-bottom: 8px;
 }
 .filter__salary_title {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
