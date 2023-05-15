@@ -1,6 +1,6 @@
 import { Card, Text, Group, Image } from '@mantine/core';
 import { IconPointFilled, IconMapPin } from '@tabler/icons-react';
-import Star from '../../assets/Star.svg';
+import star from '../../assets/star.svg';
 import './vacancyView.css';
 
 type VacancyViewProps = {
@@ -47,7 +47,7 @@ const VacancyView = (props: VacancyViewProps) => {
             {profession}
           </Text>
           <Image
-            src={Star}
+            src={star}
             width="24px"
             height="24px"
             alt="star"

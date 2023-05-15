@@ -1,0 +1,28 @@
+.card__image {
+  cursor: pointer;
+  background-image: url('../../assets/star.svg');
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  transition: 0.2s;
+}
+.card__image:hover {
+  background-image: url('../../assets/star_hover.svg');
+}
+.card__image_active {
+  cursor: pointer;
+  background-image: url('../../assets/star_active.svg');
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+}
+.card__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 40px;
+  width: 773px;
+  margin: 0 auto;
+  gap: 20px 0;
+}

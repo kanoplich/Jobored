@@ -11,7 +11,7 @@ export const vacancySlice = createSlice({
   name: 'vacancy',
   initialState,
   reducers: {
-    CardId(state, action: PayloadAction<number>) {
+    cardId(state, action: PayloadAction<number>) {
       state.id = action.payload;
     },
   },

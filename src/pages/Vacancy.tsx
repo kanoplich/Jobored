@@ -1,5 +1,6 @@
+import { Card } from '@mantine/core';
+import CardJob from '../components/Card/CardJob';
 import Spinner from '../components/Spinner/Spinner';
-import VacancyView from '../components/VacancyView/VacancyView';
 import { useGetVacancyIDQuery } from '../store/reducers/apiSlice';
 
 type VacancyProps = {
@@ -17,16 +18,12 @@ const Vacancy = ({ id }: VacancyProps) => {
         </div>
       ) : (
         isSuccess && (
-          <VacancyView
-            id={data.id}
-            currency={data.currency}
-            payment_from={data.payment_from}
-            payment_to={data.payment_to}
-            profession={data.profession}
-            town={data.town.title}
-            type_of_work={data.type_of_work.title}
-            vacancyRichText={data.vacancyRichText}
-          />
+          <div className="card__wrapper">
+            <CardJob props={data} />
+            <Card padding="24px" radius="md" mb={51} withBorder>
+              <div dangerouslySetInnerHTML={{ __html: data.vacancyRichText }}></div>
+            </Card>
+          </div>
         )
       )}
     </div>

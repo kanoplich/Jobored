@@ -5,9 +5,20 @@ import CardJob from '../components/Card/CardJob';
 import Paginate from '../components/Paginate/Paginate';
 import { useGetVacanciesQuery } from '../store/reducers/apiSlice';
 import Spinner from '../components/Spinner/Spinner';
+import { useEffect } from 'react';
+import { useAppDispatch } from '../hooks/redux';
+import { favoriteSlice } from '../store/reducers/favoriteSlice';
+import { IVacancy } from '../types';
 
 const MainPage = () => {
   const { data, isSuccess, isLoading } = useGetVacanciesQuery();
+  const dispatch = useAppDispatch();
+  const { addVacancy } = favoriteSlice.actions;
+
+  useEffect(() => {
+    const arr: Array<IVacancy> = JSON.parse(localStorage.getItem('favorites') || '[]');
+    arr.map((item) => dispatch(addVacancy(item)));
+  }, []);
 
   return (
     <div className="container">
@@ -30,18 +41,7 @@ const MainPage = () => {
           ) : (
             isSuccess &&
             data.objects.map((data) => {
-              return (
-                <CardJob
-                  key={data.id.toString()}
-                  id={data.id}
-                  profession={data.profession}
-                  town={data.town.title}
-                  type_of_work={data.type_of_work.title}
-                  payment_from={data.payment_from}
-                  payment_to={data.payment_to}
-                  currency={data.currency}
-                />
-              );
+              return <CardJob key={data?.id.toString()} props={data} />;
             })
           )}
           {isSuccess && (
