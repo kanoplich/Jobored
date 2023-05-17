@@ -2,8 +2,8 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface SearchState {
   keyword: string;
-  payment_from: number;
-  payment_to: number;
+  payment_from: number | '';
+  payment_to: number | '';
   catalogues: number;
 }
 const initialState: SearchState = {
@@ -20,10 +20,10 @@ export const searchSlice = createSlice({
     searchKeyword(state, action: PayloadAction<string>) {
       state.keyword = action.payload;
     },
-    searchPaymentFrom(state, action: PayloadAction<number>) {
+    searchPaymentFrom(state, action: PayloadAction<number | ''>) {
       state.payment_from = action.payload;
     },
-    searchPaymentTo(state, action: PayloadAction<number>) {
+    searchPaymentTo(state, action: PayloadAction<number | ''>) {
       state.payment_to = action.payload;
     },
     searchPaymentCatalogues(state, action: PayloadAction<number>) {

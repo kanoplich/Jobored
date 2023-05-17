@@ -1,16 +1,39 @@
 import { TextInput, Button } from '@mantine/core';
 import { IconSearch } from '@tabler/icons-react';
-import React, { useState } from 'react';
-import { useAppDispatch } from '../../hooks/redux';
+import React, { useState, useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { searchSlice } from '../../store/reducers/searchSlice';
+import { allVacanciesSlice } from '../../store/reducers/allVacanciesSlice';
+import { useGetSearchQuery } from '../../store/reducers/apiSlice';
+import { IVacancies } from '../../types';
 
 const Search = () => {
   const dispatch = useAppDispatch();
   const { searchKeyword } = searchSlice.actions;
   const [value, setValue] = useState('');
 
+  const { vacanciesData } = allVacanciesSlice.actions;
+  const [dataStore, setDataStore] = useState<IVacancies>();
+  const keyword = useAppSelector((state) => state.searchSlice.keyword);
+  const catalogues = useAppSelector((state) => state.searchSlice.catalogues);
+  const payment_from = useAppSelector((state) => state.searchSlice.payment_from);
+  const payment_to = useAppSelector((state) => state.searchSlice.payment_to);
+  const { data, isLoading } = useGetSearchQuery({
+    search: keyword,
+    catalog: catalogues,
+    from: payment_from,
+    to: payment_to,
+  });
+
+  useEffect(() => {
+    dataStore && dispatch(vacanciesData(dataStore));
+  }, [dataStore]);
+
   const handleClick = () => {
     dispatch(searchKeyword(value));
+    if (!isLoading) {
+      setDataStore(data);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -16,3 +16,8 @@ export interface IVacancy {
 export interface IVacancies {
   objects: Array<IVacancy>;
 }
+
+export interface ICatalogues {
+  title: string;
+  key: number;
+}

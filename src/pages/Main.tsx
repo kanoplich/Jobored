@@ -12,8 +12,10 @@ import { IVacancy } from '../types';
 
 const MainPage = () => {
   const { data, isSuccess, isLoading } = useGetVacanciesQuery();
+
   const dispatch = useAppDispatch();
   const { addVacancy } = favoriteSlice.actions;
+  // const dataStore = useAppSelector((state) => state.allVacanciesSlice.objects);
 
   useEffect(() => {
     const arr: Array<IVacancy> = JSON.parse(localStorage.getItem('favorites') || '[]');

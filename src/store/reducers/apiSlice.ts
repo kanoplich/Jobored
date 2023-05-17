@@ -1,10 +1,10 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { IVacancies, IVacancy } from '../../types';
+import { IVacancies, IVacancy, ICatalogues } from '../../types';
 
 interface IQueryParams {
   search: string;
-  from: number;
-  to: number;
+  from: number | '';
+  to: number | '';
   catalog: number;
 }
 
@@ -24,18 +24,26 @@ export const apiSlice = createApi({
   }),
   endpoints: (builder) => ({
     getVacancies: builder.query<IVacancies, void>({
-      query: () => `/vacancies/`,
+      query: () => `vacancies/`,
     }),
     getVacancyID: builder.query<IVacancy, number>({
-      query: (id) => `/vacancies/${id}/`,
+      query: (id) => `vacancies/${id}/`,
     }),
     getSearch: builder.query<IVacancies, IQueryParams>({
       query: ({ search, from, to, catalog }) =>
-        `/vacancies/?keyword=${search}&payment_from=${from}&payment_to=${to}&catalogues=${catalog}`,
+        `vacancies/?keyword=${search}&payment_from=${from}&payment_to=${to}&catalogues=${catalog}`,
+    }),
+    getCatalogues: builder.query<ICatalogues[], void>({
+      query: () => 'catalogues/',
     }),
   }),
 });
 
-export const { useGetVacanciesQuery, useGetVacancyIDQuery, useGetSearchQuery } = apiSlice;
+export const {
+  useGetVacanciesQuery,
+  useGetVacancyIDQuery,
+  useGetSearchQuery,
+  useGetCataloguesQuery,
+} = apiSlice;
 
 // ?keyword=''&payment_from=0&payment_to=300000&catalogues=0
