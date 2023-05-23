@@ -60,7 +60,7 @@ const CardJob = (props: CardJobProps) => {
   }
 
   return (
-    <Card padding="24px" radius="md" withBorder>
+    <Card padding="24px" radius="md" withBorder data-elem={`vacancy-${props.props.id}`}>
       <Group position="apart" mb={12}>
         <Link to="/vacancy">
           <Text
@@ -76,6 +76,7 @@ const CardJob = (props: CardJobProps) => {
           </Text>
         </Link>
         <div
+          data-elem={`vacancy-${props.props.id}-shortlist-button`}
           className={isActive ? 'card__image_active' : 'card__image'}
           onClick={handleClickFavorites}
         ></div>

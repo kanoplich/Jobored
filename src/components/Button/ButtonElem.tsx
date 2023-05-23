@@ -32,6 +32,7 @@ const ButtonElem = () => {
 
   return (
     <Button
+      data-elem="search-button"
       style={{ fontSize: '14px', fontWeight: '500', lineHeight: '21' }}
       radius="md"
       size="md"

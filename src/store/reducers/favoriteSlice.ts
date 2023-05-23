@@ -13,9 +13,7 @@ export const favoriteSlice = createSlice({
   initialState,
   reducers: {
     addVacancy(state, action: PayloadAction<IVacancy>) {
-      if (state.items.includes(action.payload)) {
-        return state;
-      } else {
+      if (!state.items.includes(action.payload)) {
         state.items.push(action.payload);
       }
     },

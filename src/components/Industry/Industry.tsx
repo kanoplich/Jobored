@@ -31,6 +31,7 @@ const Industry = () => {
 
   return (
     <Select
+      data-elem="industry-select"
       placeholder="Выберете отрасль"
       data={industryData || []}
       dropdownPosition="bottom"

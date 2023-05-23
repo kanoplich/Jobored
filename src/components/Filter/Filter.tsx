@@ -58,8 +58,18 @@ const Filter = () => {
       </div>
       <div className="filter__salary_wrapper">
         <div className="filter__salary_title">Оклад</div>
-        <Salary str="От" handleChangePayment={handleChangePaymentFrom} value={salaryFrom} />
-        <Salary str="До" handleChangePayment={handleChangePaymentTo} value={salaryTo} />
+        <Salary
+          str="От"
+          handleChangePayment={handleChangePaymentFrom}
+          value={salaryFrom}
+          dataElem="salary-from-input"
+        />
+        <Salary
+          str="До"
+          handleChangePayment={handleChangePaymentTo}
+          value={salaryTo}
+          dataElem="salary-to-input"
+        />
       </div>
       <div className="filter__button">
         <ButtonElem />

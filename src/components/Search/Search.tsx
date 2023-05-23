@@ -42,6 +42,7 @@ const Search = () => {
 
   return (
     <TextInput
+      data-elem="search-input"
       placeholder="Введите название вакансии"
       style={{ fontSize: 14, lineHeight: 21 }}
       ff="Inter, san-serif"
@@ -51,6 +52,7 @@ const Search = () => {
       onChange={(event) => handleChange(event)}
       rightSection={
         <Button
+          data-elem="search-button"
           radius="md"
           size="sm"
           style={{ fontWeight: 500, fontSize: 14, lineHeight: 21 }}
